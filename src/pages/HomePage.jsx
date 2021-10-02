@@ -10,6 +10,7 @@ function HomePage() {
             </div>
             <div>
                 <h1>Home Page</h1>
+                <button>Voltar</button>
             </div>
         </div>
     )
