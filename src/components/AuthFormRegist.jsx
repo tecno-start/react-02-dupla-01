@@ -26,7 +26,7 @@ function AuthFormRegist() {
         placeholder: 'voce@email.com',
       }
     const passwordInputProps = {
-        type: 'password',
+        type: 'senha',
         placeholder: 'digite sua senha',
     }
 

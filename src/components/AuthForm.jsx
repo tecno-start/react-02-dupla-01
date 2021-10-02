@@ -49,7 +49,7 @@ function AuthForm() {
         Login
       </Button>
       <p>Esqueceu sua senha</p>
-      <p>Não possui uma conta? Cadastra-se</p>
+      <p>Não possui uma conta? <button>Cadastra-se</button> </p>
       <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
     </Form>);
 }
