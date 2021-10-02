@@ -4,9 +4,12 @@ import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 
 function AuthForm() {
+
   function handleSubmit() {
     console.log("confirmou formulario")
   }
+
+
   const userInputProps = {
     type: 'email',
     placeholder: 'voce@email.com',
@@ -30,11 +33,11 @@ function AuthForm() {
 
       <FormGroup>
         <Label for="Email">Email</Label>
-        <Input {...userInputProps} />
+        <Input {...userInputProps} required />
       </FormGroup>
       <FormGroup>
         <Label for="Senha">Senha</Label>
-        <Input {...passwordInputProps} />
+        <Input {...passwordInputProps} required />
       </FormGroup>
       <FormGroup>
         <Input type="checkbox" />
