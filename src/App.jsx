@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import PrivacyPolicies from './pages/PrivacyPolicies';
 import RedefinePassword from './pages/RedefinePassword';
 import MyPoints from './pages/MyPoints';
+import SearchRoom from './pages/SearchRoom';
 
 function App() {
   return (
@@ -32,7 +33,10 @@ function App() {
           <RedefinePassword />
         </Route>
         <Route path='/meus-pontos'>
-          <MyPoints/>
+          <MyPoints />
+        </Route>
+        <Route path='/buscar-sala'>
+          <SearchRoom/>
         </Route>
       </Switch>
     </Router>
