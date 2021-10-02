@@ -12,7 +12,7 @@ function AuthForm() {
     placeholder: 'voce@email.com',
   }
   const passwordInputProps = {
-    type: 'senha',
+    type: 'password',
     placeholder: 'digite sua senha',
   }
 
