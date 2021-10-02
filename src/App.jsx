@@ -8,6 +8,7 @@ import {
 import AuthPage from './pages/AuthPage';
 import AuthRegistPage from './pages/AuthRegistPage';
 import HomePage from './pages/HomePage';
+import PrivacyPolicies from './pages/PrivacyPolicies';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path='/home'>
           <HomePage/>
+        </Route>
+        <Route path='/politicas-de-privacidade'>
+          <PrivacyPolicies/>
         </Route>
       </Switch>
     </Router>
