@@ -36,6 +36,10 @@ function AuthForm() {
         <Label for="Senha">Senha</Label>
         <Input {...passwordInputProps} />
       </FormGroup>
+      <FormGroup>
+        <Input type="checkbox" />
+        <Label for="Lembrar de mim">Lembrar de mim</Label>
+      </FormGroup>
       <hr />
       <Button
         size="lg"
@@ -44,6 +48,9 @@ function AuthForm() {
         onClick={handleSubmit}>
         Login
       </Button>
+      <p>Esqueceu sua senha</p>
+      <p>Não possui uma conta? Cadastra-se</p>
+      <span>Copyright &copy; Caio, Gabriel, Jéssica</span>
     </Form>);
 }
 export default AuthForm;
