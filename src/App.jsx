@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import AuthRegistPage from './pages/AuthRegistPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path='/cadastro'>
           <AuthRegistPage />
+        </Route>
+        <Route path='/home'>
+          <HomePage/>
         </Route>
       </Switch>
     </Router>
