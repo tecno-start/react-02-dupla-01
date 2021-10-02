@@ -4,16 +4,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
+import AuthRegistPage from './pages/AuthRegistPage';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/'>
+        <Route path='/login'>
           <AuthPage />
+        </Route>
+        <Route path='/cadastro'>
+          <AuthRegistPage />
         </Route>
       </Switch>
     </Router>

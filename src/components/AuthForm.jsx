@@ -7,7 +7,7 @@ function AuthForm() {
   function handleSubmit() {
     console.log("confirmou formulario")
   }
-  const usernameInputProps = {
+  const userInputProps = {
     type: 'email',
     placeholder: 'voce@email.com',
   }
@@ -30,7 +30,7 @@ function AuthForm() {
 
       <FormGroup>
         <Label for="Email">Email</Label>
-        <Input {...usernameInputProps} />
+        <Input {...userInputProps} />
       </FormGroup>
       <FormGroup>
         <Label for="Senha">Senha</Label>
@@ -50,7 +50,7 @@ function AuthForm() {
       </Button>
       <p>Esqueceu sua senha</p>
       <p>Não possui uma conta? Cadastra-se</p>
-      <span>Copyright &copy; Caio, Gabriel, Jéssica</span>
+      <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
     </Form>);
 }
 export default AuthForm;
