@@ -10,6 +10,7 @@ import AuthRegistPage from './pages/AuthRegistPage';
 import HomePage from './pages/HomePage';
 import PrivacyPolicies from './pages/PrivacyPolicies';
 import RedefinePassword from './pages/RedefinePassword';
+import MyPoints from './pages/MyPoints';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path='/redefinir-senha'>
           <RedefinePassword />
+        </Route>
+        <Route path='/meus-pontos'>
+          <MyPoints/>
         </Route>
       </Switch>
     </Router>
