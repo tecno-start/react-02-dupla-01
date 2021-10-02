@@ -24,7 +24,7 @@ function AuthFormRegist() {
     const userInputProps = {
         type: 'email',
         placeholder: 'voce@email.com',
-      }
+    }
     const passwordInputProps = {
         type: 'senha',
         placeholder: 'digite sua senha',
@@ -47,30 +47,30 @@ function AuthFormRegist() {
 
             <FormGroup>
                 <Label for="name">Nome</Label>
-                <Input {...userNameInputProps} />
+                <Input {...userNameInputProps} required />
             </FormGroup>
             <FormGroup>
                 <Label for="sobrenome">Sobrenome</Label>
-                <Input {...userLastNameInputProps} />
+                <Input {...userLastNameInputProps} required />
             </FormGroup>
             <FormGroup >
                 <Label for="phone">Telefone</Label>
-                <Input {...userPhoneInputProps}/>
+                <Input {...userPhoneInputProps} required />
             </FormGroup>
             <FormGroup>
                 <Label for="Email">Email</Label>
-                <Input {...userInputProps}/>
+                <Input {...userInputProps} required />
             </FormGroup>
             <FormGroup>
                 <Label for="Senha">Senha</Label>
-                <Input {...passwordInputProps} />
+                <Input {...passwordInputProps} required />
             </FormGroup>
             <FormGroup>
                 <Label for="confirmeSenha">Confirmação de senha</Label>
-                <Input {...passwordInputProps} />
+                <Input {...passwordInputProps} required />
             </FormGroup>
             <FormGroup>
-                <Input type="checkbox" />
+                <Input type="checkbox" required />
                 <Label for="termoDeclaracao">
                     Declaro que li e concordo com os termos e políticas de privacidade
                 </Label>
@@ -82,7 +82,7 @@ function AuthFormRegist() {
                 onClick={handleSubmit}>
                 Cadastrar
             </Button>
-            <p>Já possuo conta</p>
+            <p>Já possui conta</p>
             <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
         </Form>);
 }
