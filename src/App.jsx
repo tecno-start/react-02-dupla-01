@@ -9,6 +9,7 @@ import AuthPage from './pages/AuthPage';
 import AuthRegistPage from './pages/AuthRegistPage';
 import HomePage from './pages/HomePage';
 import PrivacyPolicies from './pages/PrivacyPolicies';
+import RedefinePassword from './pages/RedefinePassword';
 
 function App() {
   return (
@@ -21,10 +22,13 @@ function App() {
           <AuthRegistPage />
         </Route>
         <Route path='/home'>
-          <HomePage/>
+          <HomePage />
         </Route>
         <Route path='/politicas-de-privacidade'>
-          <PrivacyPolicies/>
+          <PrivacyPolicies />
+        </Route>
+        <Route path='/redefinir-senha'>
+          <RedefinePassword />
         </Route>
       </Switch>
     </Router>
