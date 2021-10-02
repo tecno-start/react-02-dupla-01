@@ -12,6 +12,7 @@ import PrivacyPolicies from './pages/PrivacyPolicies';
 import RedefinePassword from './pages/RedefinePassword';
 import MyPoints from './pages/MyPoints';
 import SearchRoom from './pages/SearchRoom';
+import CreateRoom from './pages/CreateRoom';
 
 function App() {
   return (
@@ -36,7 +37,10 @@ function App() {
           <MyPoints />
         </Route>
         <Route path='/buscar-sala'>
-          <SearchRoom/>
+          <SearchRoom />
+        </Route>
+        <Route path='/criar-sala'>
+          <CreateRoom />
         </Route>
       </Switch>
     </Router>
