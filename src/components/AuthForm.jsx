@@ -53,13 +53,12 @@ function AuthForm() {
         onClick={handleSubmit}>
         Login
       </Button>
-
       <div id='botoesLogin'>
-      <Link to={REDEFINIR_SENHA}>Esqueceu sua senha?</Link>
-      <Link to={CADASTRO} id='cadastro'>Não possui uma conta? Cadastre-se</Link>
+        <Link to={REDEFINIR_SENHA}>Esqueceu sua senha?</Link>
+        <Link to={CADASTRO} id='cadastro'>Não possui uma conta? Cadastre-se</Link>
       </div>
       <hr />
-      <span className='copyRight'>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span> 
+      <span className='copyRight'>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
     </Form>);
 }
 

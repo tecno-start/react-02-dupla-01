@@ -71,7 +71,7 @@ function AuthFormRegist() {
                 <Label for="confirmeSenha">Confirmação de senha</Label>
                 <Input {...passwordInputProps} required />
             </FormGroup>
-            <FormGroup>
+            <FormGroup className='lembrarSenha'>
                 <Input type="checkbox" required />
                 <Label for="termoDeclaracao">
                     Declaro que li e concordo com os termos e políticas de privacidade

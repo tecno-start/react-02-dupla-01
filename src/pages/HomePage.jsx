@@ -7,7 +7,7 @@ function HomePage() {
     return (
         <div>
             <div>
-                <Header />
+                <SideNavBar/>
             </div>
             <div>
                 <h1>Home Page</h1>
