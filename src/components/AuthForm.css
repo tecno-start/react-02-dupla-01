@@ -1,0 +1,17 @@
+#botoesLogin{
+    display:flex;
+    padding-top: 2%;
+    justify-content: space-between;
+}
+
+.lembrarSenha{
+    padding-left: 4%;
+}
+
+.cadastro{
+    margin-right: 2%;
+}
+
+.copyRight{
+    font-size:small;
+}

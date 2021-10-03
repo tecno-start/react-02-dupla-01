@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { REDEFINIR_SENHA, CADASTRO } from '../routes/routes';
+import './AuthForm.css'
 
 
 function AuthForm() {
@@ -10,7 +11,6 @@ function AuthForm() {
   function handleSubmit() {
     console.log("confirmou formulario")
   }
-
 
   const userInputProps = {
     type: 'email',
@@ -41,7 +41,7 @@ function AuthForm() {
         <Label for="Senha">Senha</Label>
         <Input {...passwordInputProps} required />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className='lembrarSenha'>
         <Input type="checkbox" />
         <Label for="Lembrar de mim">Lembrar de mim</Label>
       </FormGroup>
@@ -53,15 +53,16 @@ function AuthForm() {
         onClick={handleSubmit}>
         Login
       </Button>
-      <p>Esqueceu sua senha</p>
-      <p>Não possui uma conta? <button>Cadastra-se</button></p>
+
+      <div id='botoesLogin'>
       <Link to={REDEFINIR_SENHA}>Esqueceu sua senha?</Link>
+      <Link to={CADASTRO} id='cadastro'>Não possui uma conta? Cadastre-se</Link>
+      </div>
       <hr />
-      <Link to={CADASTRO}>Não possui uma conta? Cadastra-se</Link>
-      <hr />
-      <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
+      <span className='copyRight'>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span> 
     </Form>);
 }
+
 export default AuthForm;
 
 
