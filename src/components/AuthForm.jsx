@@ -1,6 +1,8 @@
 import logo200Image from '../assets/img/logo/logo_200.png';
 import React from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { REDEFINIR_SENHA, CADASTRO } from '../routes/routes';
 
 
 function AuthForm() {
@@ -52,7 +54,11 @@ function AuthForm() {
         Login
       </Button>
       <p>Esqueceu sua senha</p>
-      <p>Não possui uma conta? <button>Cadastra-se</button> </p>
+      <p>Não possui uma conta? <button>Cadastra-se</button></p>
+      <Link to={REDEFINIR_SENHA}>Esqueceu sua senha?</Link>
+      <hr />
+      <Link to={CADASTRO}>Não possui uma conta? Cadastra-se</Link>
+      <hr />
       <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
     </Form>);
 }

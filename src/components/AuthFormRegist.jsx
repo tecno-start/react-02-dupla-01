@@ -2,6 +2,8 @@
 import logo200Image from '../assets/img/logo/logo_200.png';
 import React from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../routes/routes';
 
 
 function AuthFormRegist() {
@@ -82,7 +84,8 @@ function AuthFormRegist() {
                 onClick={handleSubmit}>
                 Cadastrar
             </Button>
-            <p>Já possui conta</p>
+            <Link to={LOGIN}>Já possui conta</Link>
+            <hr />
             <span>Copyright &copy; Caio, Gabriel, Jéssica - TecnoStart</span>
         </Form>);
 }
