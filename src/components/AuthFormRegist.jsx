@@ -85,7 +85,7 @@ function AuthFormRegist() {
         onChange: handleChange,
         mask: "+55 (99) 99999-9999",
         maskChar: " ",
-        placeholder: "+55 (48) 99999-9999",
+        placeholder: "+55 (99) 99999-9999",
         className: "form-control"
     }
 
