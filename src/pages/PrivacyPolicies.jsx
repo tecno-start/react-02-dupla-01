@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 function PrivacyPolicies() {
     return (
         <div>
             <div>
-                <Header />
+                <Sidebar />
             </div>
             <div>
                 <h1>Politicas de Privacidade</h1>

@@ -12,12 +12,14 @@ function AuthPage() {
           alignItems: 'center',
         }}>
         <Col md={6} lg={4}>
-          <Card body>
+          <Card body style={{
+            borderRadius: '10px'
+          }}>
             <AuthForm />
           </Card>
         </Col>
       </Row>
-    </div>
+    </div >
   );
 }
 export default AuthPage;

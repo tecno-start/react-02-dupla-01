@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 function MyPoints() {
     return (
         <div>
             <div>
-                <Header />
+                <Sidebar />
             </div>
             <div>
                 <h1>Meus Pontos</h1>

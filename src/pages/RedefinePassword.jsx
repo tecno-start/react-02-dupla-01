@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 function RedefinePassword
 () {
     return (
         <div>
             <div>
-                <Header />
+                <Sidebar />
             </div>
             <div>
                 <h1>Redefinir Senha</h1>

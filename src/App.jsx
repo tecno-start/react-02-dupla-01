@@ -8,40 +8,45 @@ import {
 import AuthPage from './pages/AuthPage';
 import AuthRegistPage from './pages/AuthRegistPage';
 import HomePage from './pages/HomePage';
-import PrivacyPolicies from './pages/PrivacyPolicies';
-import RedefinePassword from './pages/RedefinePassword';
-import MyPoints from './pages/MyPoints';
 import SearchRoom from './pages/SearchRoom';
-import CreateRoom from './pages/CreateRoom';
+import CreateRoom from './pages/CreateRoom'
+
+import {
+  LOGIN, HOME, CADASTRO, BUSCAR_SALA, CRIAR_SALA
+} from './routes/routes.js'
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path='/login'>
-          <AuthPage />
-        </Route>
-        <Route path='/cadastro'>
+        <Route path={CADASTRO}>
           <AuthRegistPage />
         </Route>
-        <Route path='/home'>
+        {/* <Route path='/'>
+          <HomePage />
+        </Route> */}
+        <Route path={HOME}>
           <HomePage />
         </Route>
-        <Route path='/politicas-de-privacidade'>
-          <PrivacyPolicies />
+        <Route path={LOGIN}>
+          <AuthPage />
         </Route>
-        <Route path='/redefinir-senha'>
-          <RedefinePassword />
-        </Route>
-        <Route path='/meus-pontos'>
-          <MyPoints />
-        </Route>
-        <Route path='/buscar-sala'>
+        <Route path={BUSCAR_SALA}>
           <SearchRoom />
         </Route>
-        <Route path='/criar-sala'>
+        <Route path={CRIAR_SALA}>
           <CreateRoom />
         </Route>
+
+
+        {/* #TODO CRIAR REDIRECIONAMENTO CONDICIONAL*/}
+        {/* <Route path={HOME} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
+        </Route>
+        <Route path='/' render={(_) => !isLoggedFlag ? <AuthPage /> : <Redirect to={HOME} />}>
+        </Route> */}
+        {/* <Route path={LOGIN} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
+        </Route> */}
+
       </Switch>
     </Router>
   );
