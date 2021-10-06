@@ -22,6 +22,9 @@ function App() {
         <Route path={CADASTRO}>
           <AuthRegistPage />
         </Route>
+        {/* <Route path='/'>
+          <HomePage />
+        </Route> */}
         <Route path={HOME}>
           <HomePage />
         </Route>
@@ -34,6 +37,13 @@ function App() {
         <Route path={CRIAR_SALA}>
           <CreateRoom />
         </Route>
+        {/* <Route path={HOME} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
+        </Route>
+        <Route path='/' render={(_) => !isLoggedFlag ? <AuthPage /> : <Redirect to={HOME} />}>
+        </Route> */}
+        {/* <Route path={LOGIN} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
+        </Route> */}
+
       </Switch>
     </Router>
   );

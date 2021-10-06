@@ -42,17 +42,20 @@ function AuthFormRegist() {
     }
 
     function submitForm(values) {
+        const rawNumber = values.telefone;
+        const strippedNumber = rawNumber.replace(/\D+/g, '');
+
         setLoading(true)
         const to_post = {
             email: values.email,
             name: values.nome + ' ' + values.sobrenome,
             password: values.senha,
-            phone: values.telefone,
+            phone: strippedNumber,
             description: "Novo Usuario",
             photo: "Vazio"
         }
         axiosConfig.post('/user', to_post).then(
-            response => { history.push({ LOGIN }); setLoading(false) }
+            response => { history.push(LOGIN); setLoading(false) }
         ).catch((reason) => apiErrorHandle(reason))
     }
 
@@ -83,9 +86,9 @@ function AuthFormRegist() {
         name: 'telefone',
         values: values.telefone,
         onChange: handleChange,
-        mask: "+55 (99) 99999-9999",
+        mask: "(99) 99999-9999",
         maskChar: " ",
-        placeholder: "+55 (99) 99999-9999",
+        placeholder: "(99) 99999-9999",
         className: "form-control"
     }
 

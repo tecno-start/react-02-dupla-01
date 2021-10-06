@@ -9,6 +9,7 @@ import { HOME } from '../routes/routes';
 import useForm from '../services/useForm';
 import { useHistory } from 'react-router-dom';
 import validateLogin from '../services/validateLogin';
+import { login } from '../auth/auth'
 
 
 function AuthForm() {
@@ -45,7 +46,7 @@ function AuthForm() {
       password: values.senha,
     }
     axiosConfig.post('/login', to_post).then(
-      response => { history.push({ HOME }); setLoading(false) }
+      response => { history.push(HOME); setLoading(false); login(response.data.token) }
     ).catch((reason) => apiErrorHandle(reason))
   }
 
@@ -102,7 +103,7 @@ function AuthForm() {
         className="bg-gradient-theme-left border-0"
         block
         onClick={handleSubmit}>
-        {!loading ? "Cadastrar" : "Carregando.."}
+        {!loading ? "Login" : "Carregando.."}
       </Button>
       <div id='botoesLogin'>
         <Link to={REDEFINIR_SENHA}>Esqueceu sua senha?</Link>
