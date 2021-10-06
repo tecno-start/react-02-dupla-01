@@ -1,3 +1,6 @@
+import PrivateRoute from './PrivateRoute'
+import PublicRoute from "./PublicRoute"
+
 const LOGIN = "/login"
 const HOME = "/home"
 const CADASTRO = "/cadastro"
@@ -10,6 +13,8 @@ const NOT_FOUND = "/not-found"
 
 
 export {
+    PrivateRoute,
+    PublicRoute,
     LOGIN,
     HOME,
     CADASTRO,

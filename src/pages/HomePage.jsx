@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css'
 import Sidebar from '../components/Sidebar';
 import { Row, Col, Card } from 'reactstrap';
+import ButtonGoBack from '../components/ButtonGoBack';
 
 
 function HomePage() {
@@ -22,9 +23,11 @@ function HomePage() {
                             borderRadius: '10px'
                         }}>
                             <h1>Home Page</h1>
+                            <ButtonGoBack/>
                         </Card>
                     </Col>
                 </Row>
+
             </div >
         </div>
     )

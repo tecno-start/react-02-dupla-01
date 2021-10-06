@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { Row, Col, Card } from 'reactstrap';
+import ButtonGoBack from '../components/ButtonGoBack';
 
 function SearchRoom() {
     return (
@@ -20,6 +21,7 @@ function SearchRoom() {
                             borderRadius: '10px'
                         }}>
                             <h1>Pagina Buscar Sala</h1>
+                            <ButtonGoBack/>
                         </Card>
                     </Col>
                 </Row>

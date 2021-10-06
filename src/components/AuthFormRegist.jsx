@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Form, FormGroup, Input, Label, FormText } from 'reactstrap';
 import InputMask from "react-input-mask";
 import { Link, useHistory } from 'react-router-dom';
-import { LOGIN } from '../routes/routes';
+import { LOGIN, POLITICA_PRIVACIDADE } from '../routes/routes';
 import useForm from '../services/useForm'
 import validateRegister from '../services/validateRegister'
 import { axiosConfig } from '../services/axiosConfig';
@@ -167,7 +167,7 @@ function AuthFormRegist() {
             <FormGroup className='lembrarSenha'>
                 <Input type="checkbox" required name="termos" values={values.termos} onChange={handleChange} />
                 <Label for="termoDeclaracao">
-                    Declaro que li e concordo com os termos e políticas de privacidade
+                   Declaro que li e concordo com os <Link to={POLITICA_PRIVACIDADE}>termos e políticas de privacidade</Link>
                 </Label>
                 {errors.termos && <FormText color="danger">
                     {errors.termos}
