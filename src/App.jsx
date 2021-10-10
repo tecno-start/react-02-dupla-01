@@ -13,7 +13,7 @@ import CreateRoom from './pages/CreateRoom'
 import PrivacyPolicies from './pages/PrivacyPolicies'
 import MyPoints from './pages/MyPoints';
 import RedefinePassword from './pages/RedefinePassword';
-
+import PrivateRoute from './routes/PrivateRoute';
 import {
   LOGIN, 
   HOME, 
@@ -31,39 +31,25 @@ function App() {
   return (
     <Router>
       <Switch>
+        {/* public routes */}
         <Route path={CADASTRO}>
           <AuthRegistPage />
-        </Route>
-        <Route path={HOME}>
-          <HomePage />
         </Route>
         <Route path={LOGIN}>
           <AuthPage />
         </Route>
-        <Route path={BUSCAR_SALA}>
-          <SearchRoom />
-        </Route>
-        <Route path={CRIAR_SALA}>
-          <CreateRoom />
-        </Route>
         <Route path={POLITICA_PRIVACIDADE}>
           <PrivacyPolicies/>
-        </Route>
-        <Route path={MEUS_PONTOS}>
-          <MyPoints/>
         </Route>
         <Route path={REDEFINIR_SENHA}>
           <RedefinePassword/>
         </Route>
-        {/* <Route path={HOME} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
-        </Route>
-        <Route path='/' render={(_) => !isLoggedFlag ? <AuthPage /> : <Redirect to={HOME} />}>
-        </Route> */}
-        {/* <Route path={LOGIN} render={(_) => !isLoggedFlag ? <AuthPage /> : <HomePage />}>
-        </Route> */}
-        {/*<PublicRoute exact path={LOGIN} />
-        <PrivateRoute exact path={HOME} />*/}
-
+        
+        {/* private routes */}
+        <PrivateRoute Component={HomePage} path={HOME} exact />
+        <PrivateRoute Component={SearchRoom} path={BUSCAR_SALA} exact />
+        <PrivateRoute Component={CreateRoom} path={CRIAR_SALA} exact />
+        <PrivateRoute Component={MyPoints} path={MEUS_PONTOS} exact />
       </Switch>
     </Router>
   );
