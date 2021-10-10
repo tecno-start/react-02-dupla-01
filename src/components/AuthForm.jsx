@@ -46,7 +46,7 @@ function AuthForm() {
       password: values.senha,
     }
     axiosConfig.post('/login', to_post).then(
-      response => { history.push(HOME); setLoading(false); login(response.data.token) }
+      response => { setLoading(false); login(response.data.token); history.push(HOME) }
     ).catch((reason) => apiErrorHandle(reason))
   }
 
