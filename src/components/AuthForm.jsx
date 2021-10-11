@@ -10,6 +10,7 @@ import useForm from '../services/useForm';
 import { useHistory } from 'react-router-dom';
 import validateLogin from '../services/validateLogin';
 import { login } from '../auth/auth'
+import jwt from 'jwt-decode'
 
 
 function AuthForm() {
@@ -46,7 +47,7 @@ function AuthForm() {
       password: values.senha,
     }
     axiosConfig.post('/login', to_post).then(
-      response => { setLoading(false); login(response.data.token); history.push(HOME) }
+      response => { setLoading(false); login(response.data.token); history.push({ pathname: HOME, search: '?name=' + jwt(response.data.token).name }) }
     ).catch((reason) => apiErrorHandle(reason))
   }
 

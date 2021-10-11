@@ -5,12 +5,18 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
+import AvatarMenu from './AvatarMenu';
+import './AvatarMenu.scss';
 
 
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
-
     const showSidebar = () => setSidebar(!sidebar);
+    const [avatarMenu, setavatarMenu] = useState(false);
+    const showavatarMenu = () => setavatarMenu(!avatarMenu);
+
+    const windowUrl = window.location.search;
+    const params = new URLSearchParams(windowUrl);
 
     return (
         <>
@@ -19,6 +25,12 @@ function Sidebar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
+                    <div className="user-menu-wrap">
+                        <Link to={'?name=' + params.get("name")} onClick={showavatarMenu}>
+                            <FaIcons.FaUserAlt />
+                        </Link>
+                        <AvatarMenu userName={params.get("name")} avatarMenu={avatarMenu} />
+                    </div>
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
