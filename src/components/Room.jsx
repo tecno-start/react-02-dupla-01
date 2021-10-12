@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form, FormGroup, Input, Label, FormText } from 'reactstrap';
+import ModalRules from './ModalRules';
 
 function Room() {
 
@@ -73,6 +74,7 @@ function Room() {
                 <button>Copiar</button>
                 <button>Compartilhar</button>
             </div>
+            <ModalRules/>
             <div>
                 <span>link criado</span>
             </div>
