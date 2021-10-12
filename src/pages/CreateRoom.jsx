@@ -2,6 +2,9 @@ import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { Row, Col, Card } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
+import Questions from '../components/Questions';
+import Room from '../components/Room';
+import Lobby from '../components/Lobby';
 
 function CreateRoom() {
     return (
@@ -12,21 +15,41 @@ function CreateRoom() {
             <div>
                 <Row
                     style={{
-                        height: '50vh',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        margin: ' 0.5vh 20vh 10vh 40vh',
                     }}>
-                    <Col md={6} lg={4}>
-                        <Card body style={{
-                            borderRadius: '10px'
-                        }}>
-                            <h1>Pagina Criar Sala</h1>
-                            <ButtonGoBack/>
-                        </Card>
+                    <Card body style={{
+                        borderRadius: '10px'
+                    }}>
+                        {/*<Questions />*/}
+
+                    </Card>
+                    <Card body style={{
+                        borderRadius: '10px'
+                    }}>
+                     <Room />
+
+                    </Card>
+                    <Card body style={{
+                        borderRadius: '10px'
+                    }}>
+                       {/*} <Lobby />*/}
+
+                    </Card>
+                    <Col md={5} lg={4}>
+
                     </Col>
+
                 </Row>
-                
+                <div style={{
+                    textAlign: 'center',
+                }}>
+                    <ButtonGoBack />
+                </div>
+
             </div >
+
         </div>
     )
 }
