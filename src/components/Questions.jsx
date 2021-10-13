@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import { axiosConfig } from '../services/axiosConfig';
-import Question from './Question';
+import { axiosConfigAuthorized } from '../services/axiosConfig';
 
-function Questions( {perguntas} ) {
-    
+function Questions() {
+    const [perguntas, setPerguntas] = useState([])
+
+
+    function fetchQuestions() {
+        return axiosConfigAuthorized.get('/question').then(res => res.data).catch(err => console.error(err))
+    }
+    fetchQuestions()
+        .then(res => setPerguntas(res))
+
+
     return (
         <div>
-             <h1>Perguntas</h1>
+            <h1>Perguntas</h1>
             {
                 perguntas.map((pergunta) => {
-                    return (<Question pergunta={pergunta} />)
+                    return (
+
+                        <p key={pergunta.id}>
+                            <input id={pergunta.id} type='checkbox' name='checkPergunta' />
+                            <label>{pergunta.title}
+                            </label>
+                        </p>)
 
                 })
             }

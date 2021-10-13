@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import { Row, Col, Card } from 'reactstrap';
+import { Row, Col, Card, Container} from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
 import Questions from '../components/Questions';
 import Room from '../components/Room';
 import Lobby from '../components/Lobby';
-import { axiosConfigAuthorized } from '../services/axiosConfig';
+
 
 
 function CreateRoom() {
-    const [perguntas, setPerguntas] = useState([])
 
-
-    async function fetchQuestions() {
-        return axiosConfigAuthorized.get('/question').then(res => res.data).catch(err => console.error(err))
-    }
-    fetchQuestions()
-        .then(res => setPerguntas(res))
 
     return (
         <div>
@@ -24,30 +17,43 @@ function CreateRoom() {
                 <Sidebar />
             </div>
             <div>
+                <Container>
                 <Row>
-                    <Card body style={{
-                        borderRadius: '10px'
-                    }}>
-                        <Questions perguntas={perguntas} />
+                    <Col xs="6" sm="4">
 
-                    </Card>
-                    <Card body style={{
-                        borderRadius: '10px'
-                    }}>
-                        <Room /> 
+                        <Card body style={{
+                            borderRadius: '10px'
+                        }}>
+                            <Questions />
 
-                    </Card>
+                        </Card>
+
+                    </Col>
+
+                    <Col xs="6" sm="4">
+
+                        <Card body style={{
+                            borderRadius: '10px'
+                        }}>
+                            <Room />
+
+                        </Card>
+
+                    </Col>
+
+                   <Col xs="6" sm="4">
+
                     <Card body style={{
                         borderRadius: '10px'
                     }}>
                         {/*} <Lobby />*/}
 
                     </Card>
-                    <Col md={5} lg={4}>
 
                     </Col>
 
                 </Row>
+                </Container>
                 <div style={{
                     textAlign: 'center',
                 }}>
