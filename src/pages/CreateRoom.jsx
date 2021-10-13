@@ -1,40 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import { Row, Col, Card } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
 import Questions from '../components/Questions';
 import Room from '../components/Room';
 import Lobby from '../components/Lobby';
+import { axiosConfigAuthorized } from '../services/axiosConfig';
+
 
 function CreateRoom() {
+    const [perguntas, setPerguntas] = useState([])
+
+
+    async function fetchQuestions() {
+        return axiosConfigAuthorized.get('/question').then(res => res.data).catch(err => console.error(err))
+    }
+    fetchQuestions()
+        .then(res => setPerguntas(res))
+
     return (
         <div>
             <div>
                 <Sidebar />
             </div>
             <div>
-                <Row
-                    style={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        margin: ' 0.5vh 20vh 10vh 40vh',
-                    }}>
+                <Row>
                     <Card body style={{
                         borderRadius: '10px'
                     }}>
-                        {/*<Questions />*/}
+                        <Questions perguntas={perguntas} />
 
                     </Card>
                     <Card body style={{
                         borderRadius: '10px'
                     }}>
-                     <Room />
+                        <Room /> 
 
                     </Card>
                     <Card body style={{
                         borderRadius: '10px'
                     }}>
-                       {/*} <Lobby />*/}
+                        {/*} <Lobby />*/}
 
                     </Card>
                     <Col md={5} lg={4}>

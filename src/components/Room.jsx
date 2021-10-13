@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Form, FormGroup, Input, Label, FormText } from 'reactstrap';
-import ModalRules from './ModalRules';
 
 function Room() {
 
@@ -21,11 +20,7 @@ function Room() {
         placeholder: 'Mínimo 03',
         name: 'minParticipants',
     }
-    const dateWithPassword = {
-        type: 'number',
-        placeholder: 'Mínimo 03',
-        name: 'minParticipants',
-    }
+
 
     const dateRoomPassword = {
         type: 'password',
@@ -74,9 +69,10 @@ function Room() {
                 <button>Copiar</button>
                 <button>Compartilhar</button>
             </div>
-            <ModalRules/>
+    
             <div>
                 <span>link criado</span>
+                
             </div>
             <span>Bora ver quem são os melhores Best Friends!</span>
         </div>

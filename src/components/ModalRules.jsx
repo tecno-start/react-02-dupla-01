@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ButtonGoBack from './ButtonGoBack';
 
 const ModalRules = (props) => {
     const {
-        buttonLabel,
         className
     } = props;
 
@@ -23,7 +21,7 @@ const ModalRules = (props) => {
                     Elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Duis at tellus at urna condimentum. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Neque vitae tempus quam pellentesque nec nam aliquam. Feugiat in fermentum posuere urna nec tincidunt praesent. Ipsum suspendisse ultrices gravida dictum fusce. Eget arcu dictum varius duis at consectetur. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Tellus elementum sagittis vitae et leo duis ut. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi.
                 </ModalBody>
                 <ModalFooter>
-                <Button className="bg-gradient-theme-left border-0" onClick={toggle}>Voltar</Button>
+                <Button className="bg-gradient-theme-left border-0" onClick={toggle}>Voltar</Button>  
                 </ModalFooter>
             </Modal>
         </div>

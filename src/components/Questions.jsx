@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { axiosConfig } from '../services/axiosConfig';
+import Question from './Question';
 
-function Questions() {
+function Questions( {perguntas} ) {
+    
     return (
         <div>
-            <h1>Texto perguntas</h1>
+             <h1>Perguntas</h1>
+            {
+                perguntas.map((pergunta) => {
+                    return (<Question pergunta={pergunta} />)
+
+                })
+            }
         </div>
     )
 }
