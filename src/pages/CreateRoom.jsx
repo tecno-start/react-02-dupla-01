@@ -14,13 +14,13 @@ function CreateRoom() {
     return (
         <div>
             <Sidebar />
-            <div style={{
-                width: '50%',
+            <div >
+                <Container style={{
+                width: '80%',
                 display: 'flex 1',
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
-                <Container>
                     <Row>
                         <Col xs="6" sm="4">
 
