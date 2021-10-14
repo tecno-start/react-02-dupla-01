@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { REDEFINIR_SENHA, CADASTRO } from '../routes/routes';
 import './AuthForm.css'
 import { useState } from 'react';
-import { axiosConfig } from '../services/axiosConfig';
 import { HOME } from '../routes/routes';
 import useForm from '../services/useForm';
 import { useHistory } from 'react-router-dom';
 import validateLogin from '../services/validateLogin';
 import { login } from '../auth/auth'
+import getAxios from '../services/axiosConfig';
 
 
 
@@ -17,6 +17,8 @@ function AuthForm() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   let history = useHistory();
+
+  const axiosConfig = getAxios(false)
 
   const fields = {
     email: '',

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { axiosConfigAuthorized } from '../services/axiosConfig';
+import getAxios from '../services/axiosConfig'
 
 function Questions() {
     const [perguntas, setPerguntas] = useState([])
 
+    const axiosConfig = getAxios(true)
 
     function fetchQuestions() {
-        return axiosConfigAuthorized.get('/question').then(res => res.data).catch(err => console.error(err))
+        return axiosConfig.get('/question').then(res => res.data).catch(err => console.error(err))
     }
     fetchQuestions()
         .then(res => setPerguntas(res))

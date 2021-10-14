@@ -6,14 +6,16 @@ import { Link, useHistory } from 'react-router-dom';
 import { LOGIN, POLITICA_PRIVACIDADE } from '../routes/routes';
 import useForm from '../services/useForm'
 import validateRegister from '../services/validateRegister'
-import { axiosConfig } from '../services/axiosConfig';
 import { useState } from 'react';
+import getAxios from '../services/axiosConfig';
 
 
 function AuthFormRegist() {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     let history = useHistory();
+
+    const axiosConfig = getAxios(false)
 
     const fields = {
         nome: '',
