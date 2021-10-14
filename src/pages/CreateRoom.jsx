@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import { Row, Col, Card, Container} from 'reactstrap';
+import { Row, Col, Card, Container } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
 import Questions from '../components/Questions';
 import Room from '../components/Room';
@@ -13,46 +13,49 @@ function CreateRoom() {
 
     return (
         <div>
-            <div>
-                <Sidebar />
-            </div>
-            <div>
+            <Sidebar />
+            <div style={{
+                width: '50%',
+                display: 'flex 1',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
                 <Container>
-                <Row>
-                    <Col xs="6" sm="4">
+                    <Row>
+                        <Col xs="6" sm="4">
 
-                        <Card body style={{
-                            borderRadius: '10px'
-                        }}>
-                            <Questions />
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                <Questions />
 
-                        </Card>
+                            </Card>
 
-                    </Col>
+                        </Col>
 
-                    <Col xs="6" sm="4">
+                        <Col xs="6" sm="4">
 
-                        <Card body style={{
-                            borderRadius: '10px'
-                        }}>
-                            <Room />
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                <Room />
 
-                        </Card>
+                            </Card>
 
-                    </Col>
+                        </Col>
 
-                   <Col xs="6" sm="4">
+                        <Col xs="6" sm="4">
 
-                    <Card body style={{
-                        borderRadius: '10px'
-                    }}>
-                        {/*} <Lobby />*/}
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                {/*} <Lobby />*/}
 
-                    </Card>
+                            </Card>
 
-                    </Col>
+                        </Col>
 
-                </Row>
+                    </Row>
                 </Container>
                 <div style={{
                     textAlign: 'center',
@@ -60,9 +63,9 @@ function CreateRoom() {
                     <ButtonGoBack />
                 </div>
 
-            </div >
+            </div>
 
-        </div>
+        </div >
     )
 }
 
