@@ -1,7 +1,7 @@
-import react from "react";
+import React from "react";
 
 
-function myFunction() {
+function ButtonCopy() {
   var copyText = document.getElementById("myInput");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
@@ -10,7 +10,8 @@ function myFunction() {
 
   return (
     <div>
-        <button type='button' onClick={voltar} className="bg-gradient-theme-left border-0">Voltar</button>
+        <button type='button' onClick={ButtonCopy} className="bg-gradient-theme-left border-0">Copiar</button>
     </div>
 )
 }
+export default ButtonCopy
