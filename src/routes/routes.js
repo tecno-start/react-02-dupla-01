@@ -3,7 +3,7 @@ import PrivateRoute from './PrivateRoute'
 
 
 const LOGIN = "/login"
-const HOME = "/home"
+const HOME = "/"
 const CADASTRO = "/cadastro"
 const POLITICA_PRIVACIDADE = '/politicas-de-privacidade'
 const REDEFINIR_SENHA = '/redefinir-senha'

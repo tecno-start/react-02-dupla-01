@@ -15,9 +15,6 @@ function Sidebar() {
     const [avatarMenu, setavatarMenu] = useState(false);
     const showavatarMenu = () => setavatarMenu(!avatarMenu);
 
-    const windowUrl = window.location.search;
-    const params = new URLSearchParams(windowUrl);
-
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
@@ -26,10 +23,10 @@ function Sidebar() {
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
                     <div className="user-menu-wrap">
-                        <Link to={'?name=' + params.get("name")} onClick={showavatarMenu}>
+                        <Link to="#" onClick={showavatarMenu}>
                             <FaIcons.FaUserAlt />
                         </Link>
-                        <AvatarMenu userName={params.get("name")} avatarMenu={avatarMenu} />
+                        <AvatarMenu avatarMenu={avatarMenu} />
                     </div>
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

@@ -1,33 +1,71 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import { Row, Col, Card } from 'reactstrap';
+import { Row, Col, Card, Container } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
+import Questions from '../components/Questions';
+import Room from '../components/Room';
+import Lobby from '../components/Lobby';
+
+
 
 function CreateRoom() {
+
+
     return (
         <div>
-            <div>
-                <Sidebar />
+            <Sidebar />
+            <div >
+                <Container style={{
+                width: '80%',
+                display: 'flex 1',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
+                    <Row>
+                        <Col xs="6" sm="4">
+
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                <Questions />
+
+                            </Card>
+
+                        </Col>
+
+                        <Col xs="6" sm="4">
+
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                <Room />
+
+                            </Card>
+
+                        </Col>
+
+                        <Col xs="6" sm="4">
+
+                            <Card body style={{
+                                borderRadius: '10px'
+                            }}>
+                                {/*} <Lobby />*/}
+
+                            </Card>
+
+                        </Col>
+
+                    </Row>
+                </Container>
+                <div style={{
+                    textAlign: 'center',
+                }}>
+                    <ButtonGoBack />
+                </div>
+
             </div>
-            <div>
-                <Row
-                    style={{
-                        height: '50vh',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}>
-                    <Col md={6} lg={4}>
-                        <Card body style={{
-                            borderRadius: '10px'
-                        }}>
-                            <h1>Pagina Criar Sala</h1>
-                            <ButtonGoBack/>
-                        </Card>
-                    </Col>
-                </Row>
-                
-            </div >
-        </div>
+
+        </div >
     )
 }
 

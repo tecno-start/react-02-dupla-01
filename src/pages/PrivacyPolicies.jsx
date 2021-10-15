@@ -1,15 +1,11 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
 import ButtonGoBack from '../components/ButtonGoBack';
 import { Row, Col, Card } from 'reactstrap';
 
 function PrivacyPolicies() {
     return (
-        <div>
-            <div>
-                <Sidebar />
-            </div>
-            <div>
+        <div  className="bg-gradient-theme-left border-0">
+    
                 <Row
                     style={{
                         height: '50vh',
@@ -25,7 +21,6 @@ function PrivacyPolicies() {
                         </Card>
                     </Col>
                 </Row>
-            </div>
         </div>
     )
 }
