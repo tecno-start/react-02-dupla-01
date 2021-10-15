@@ -12,7 +12,7 @@ const ModalRules = (props) => {
 
     return (
         <div>
-            <Button color="danger" onClick={toggle}>Ajuda</Button>
+            <Button color="danger" onClick={toggle}>Regras do Jogo</Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader >Regras do Jogo</ModalHeader>
                 <ModalBody>
