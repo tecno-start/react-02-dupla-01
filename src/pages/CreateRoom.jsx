@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { Row, Col, Card, Container } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
@@ -49,7 +49,7 @@ function CreateRoom() {
                             <Card body style={{
                                 borderRadius: '10px'
                             }}>
-                                {/*} <Lobby />*/}
+                                 <Lobby />
 
                             </Card>
 
