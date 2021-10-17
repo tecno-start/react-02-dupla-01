@@ -9,7 +9,7 @@ function useForm(callback, validate, setErrors, fields, errors) {
         let value = ''
         if (e.target.type === 'checkbox') {
             name = e.target.name
-            value = e.target.checked
+            value = e.target.checked ? 1 : 0
         } else {
             name = e.target.name
             value = e.target.value

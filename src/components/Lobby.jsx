@@ -18,6 +18,10 @@ function Lobby() {
                     Max
                 </span>
             </div>
+
+            <div>
+                {/* <p>Icone - Criador da sala</p> */}
+            </div>
         </div>
     )
 }

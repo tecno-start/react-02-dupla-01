@@ -24,7 +24,7 @@ function AuthFormRegist() {
         telefone: '',
         senha: '',
         senha2: '',
-        termos: '',
+        termos: 0,
     }
 
     function apiErrorHandle(reason) {
@@ -169,7 +169,7 @@ function AuthFormRegist() {
             <FormGroup className='lembrarSenha'>
                 <Input type="checkbox" required name="termos" values={values.termos} onChange={handleChange} />
                 <Label for="termoDeclaracao">
-                   Declaro que li e concordo com os <Link to={POLITICA_PRIVACIDADE}>termos e políticas de privacidade</Link>
+                    Declaro que li e concordo com os <Link to={POLITICA_PRIVACIDADE}>termos e políticas de privacidade</Link>
                 </Label>
                 {errors.termos && <FormText color="danger">
                     {errors.termos}
