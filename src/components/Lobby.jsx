@@ -1,36 +1,39 @@
 import React from 'react'
-import { Row, Col, Card, Container, Alert } from 'reactstrap';
+import { Row, Col, } from 'reactstrap';
+import * as AiIcons from 'react-icons/ai';
 
 function Lobby() {
     return (
         <div>
-            <h1>Lobby</h1>
-            <div style={{
-                flex: 1,
-                float: 'right'
-            }}>
+            <h1>Lobby</h1> 
+            <hr />
                 <Col>
-                <Row>
-                
-                <span>
-                    Min
-                </span>
-                <span>
-                    Atual
-                </span>
-                <span>
-                    Max
-                </span>
-               
-                </Row>
-                <Row>
-                <h2>texto</h2>
-                </Row>
-                <Row>
-                <Card></Card>
-                </Row>
+                    <Row className="d-flex justify-content-around">
+                        <span>
+                            Min
+                        </span>
+                        <span>
+                            Atual
+                        </span>
+                        <span>
+                            Max
+                        </span>
+                    </Row>
+                    </Col>
+                    <hr />
+                    <Col>
+                    <Row>
+                        <AiIcons.AiFillStar/>
+                        <p>texto1</p>
+                    </Row>
+                    <Row>
+                        <p>texto2</p>
+                    </Row>
+                    <Row>
+                        <p>texto3</p>
+                    </Row>
                 </Col>
-            </div>
+
 
             <div>
                 {/* <p>Icone - Criador da sala</p> */}
@@ -40,4 +43,4 @@ function Lobby() {
 }
 
 export default Lobby
-{/*  */}
+{/*  */ }
