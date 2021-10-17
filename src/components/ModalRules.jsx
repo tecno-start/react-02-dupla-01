@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, UncontrolledTooltip } from 'reactstrap';
+import * as BiIcons from 'react-icons/bi';
 
-const ModalRules = () => {
+
+
+function ModalRules() {
 
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
-
     return (
         <div>
-            <Button color="danger" onClick={toggle}>Regras do Jogo</Button>
+            <BiIcons.BiHelpCircle size={30} style={{ 'color': '#ba55d3' }} onClick={toggle} id='tooltipModal' />
+            <UncontrolledTooltip placement="top" target="tooltipModal" >
+                Regras do Jogo
+            </UncontrolledTooltip >
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader >Regras do Jogo</ModalHeader>
                 <ModalBody>

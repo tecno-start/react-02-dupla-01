@@ -76,7 +76,7 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
                 </FormGroup>
                 <FormGroup>
                     <Label for="roomPassword">Senha</Label>
-                    <Input {...dateRoomPassword} requirid />
+                    <Input {...dateRoomPassword} />
                 </FormGroup>
                 {errors['senha'] && <FormText color="danger">
                     {errors['senha']}
