@@ -9,6 +9,7 @@ import AvatarMenu from './AvatarMenu';
 import './AvatarMenu.scss';
 
 
+
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);

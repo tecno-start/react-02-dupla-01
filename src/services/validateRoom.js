@@ -13,10 +13,10 @@ export default function validateRoom(values) {
         'condition': parseInt(values.maximoParticipantes) < parseInt(values.minimoParticipantes), 'error': 'Máximo deve ser maior/igual ao mínimo.', 'field': 'maximoParticipantes'
     },
     {
-        'condition': parseInt(values.minimoParticipantes) >= 3, 'error': 'Número de participantes deve ser maior igual a 3.', 'field': 'minimoParticipantes'
+        'condition': parseInt(values.minimoParticipantes) < 3, 'error': 'Número de participantes deve ser maior igual a 3.', 'field': 'minimoParticipantes'
     },
     {
-        'condition': values.comSenha === 'Sim' && values.senha.lenght < 8, 'error': 'A senha deve ter no mínimo 8 caracteres', 'field': 'senha'
+        'condition': values.comSenha === 'Sim' && (values.senha.length < 6 || values.senha.length > 8), 'error': 'A senha deve ter entre 6 e 8 caracteres', 'field': 'senha'
     }
         // {
         //     'condition': values.perguntas.lenght < 1, 'error': 'Número de participantes deve ser maior igual a 3.', 'field': 'minimoParticipantes'

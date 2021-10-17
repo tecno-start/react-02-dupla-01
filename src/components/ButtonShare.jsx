@@ -1,7 +1,19 @@
 import React from 'react';
+import * as AiIcons from 'react-icons/ai';
 
 
-<Button 
+function ButtonCopy() {
+
+return (
+  <AiIcons.AiOutlineShareAlt size={45} style={{'color': '#6a82fb'}}/>
+)
+
+
+   }
+
+export default ButtonCopy
+
+{/* <Button 
   className='myWonderfulButton'
   onClick={
     () => { 
@@ -13,4 +25,4 @@ import React from 'react';
     )}
     }>
      Compartilhar
-</Button>
+</Button> */}

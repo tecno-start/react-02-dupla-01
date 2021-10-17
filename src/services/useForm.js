@@ -8,8 +8,21 @@ function useForm(callback, validate, setErrors, fields, errors) {
         let name = ''
         let value = ''
         if (e.target.type === 'checkbox') {
-            name = e.target.name
-            value = e.target.checked ? 1 : 0
+            if (e.target.name === 'perguntas') {
+                let listaPerguntas = [...values.perguntas]
+                if (e.target.checked) {
+                    listaPerguntas.push(e.target.id)
+                }
+                else {
+                    listaPerguntas = listaPerguntas.filter(item => item !== e.target.id)
+                }
+                name = e.target.name
+                value = listaPerguntas
+            }
+            else {
+                name = e.target.name
+                value = e.target.checked ? 1 : 0
+            }
         } else {
             name = e.target.name
             value = e.target.value

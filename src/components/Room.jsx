@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, FormGroup, Input, Label, FormText, Button } from 'reactstrap';
-// import ModalRules from '../components/ModalRules'
+import ButtonCopy from './ButtonCopy';
+import ButtonShare from './ButtonShare';
 
 function Room({ errors, values, handleChange, handleSubmit, loading }) {
 
@@ -15,7 +16,7 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
     const dateMaxParticipants = {
         type: 'number',
         placeholder: 'Máximo 20',
-        name: 'maxParticipantes',
+        name: 'maximoParticipantes',
         onChange: handleChange,
         values: values.maximoParticipantes
     }
@@ -23,7 +24,7 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
     const dateMinParticipants = {
         type: 'number',
         placeholder: 'Mínimo 03',
-        name: 'minParticipantes',
+        name: 'minimoParticipantes',
         onChange: handleChange,
         values: values.minimoParticipantes
     }
@@ -36,7 +37,6 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
         onChange: handleChange,
         values: values.senha
     }
-
 
 
     return (
@@ -69,14 +69,14 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
                 </FormText>}
                 <FormGroup>
                     <Label for="withPassword">Com Senha?</Label>
-                    <Input type="select" id="select" required onChange={handleChange} values={values.comSenha} defaultValue='Não' name='senha'>
+                    <Input type="select" id="select" required onChange={handleChange} values={values.comSenha} defaultValue='Não' name='comSenha'>
                         <option>Sim</option>
                         <option>Não</option>
                     </Input>
                 </FormGroup>
                 <FormGroup>
                     <Label for="roomPassword">Senha</Label>
-                    <Input {...dateRoomPassword} required />
+                    <Input {...dateRoomPassword} requirid />
                 </FormGroup>
                 {errors['senha'] && <FormText color="danger">
                     {errors['senha']}
@@ -89,20 +89,25 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
                 onClick={handleSubmit}>
                 {!loading ? "Criar Sala" : "Carregando.."}
             </Button>
-
-            <div>
-                <button>Copiar</button>
-                <button>Compartilhar</button>
+            <hr />
+            <div className="d-flex justify-content-around">
+                <ButtonCopy />
+                <ButtonShare />
             </div>
-            {/* <div>
-                <ModalRules />
-            </div> */}
-
-            <div>
+            <hr />
+            <div style={{
+                'textAlign': 'center'
+            }}>
                 <span>link criado</span>
 
             </div>
-            <span>Bora ver quem são os melhores Best Friends!</span>
+            <div style={{
+                'textAlign': 'center'
+            }}>
+                <span >
+                    Bora ver quem são os melhores Best Friends!
+                </span>
+            </div>
         </div>
 
 

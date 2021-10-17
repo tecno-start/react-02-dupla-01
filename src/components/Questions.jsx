@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import getAxios from '../services/axiosConfig'
+import { Label, Input, FormGroup } from 'reactstrap'
 
-function Questions() {
+function Questions({ handleChange, values }) {
     const [perguntas, setPerguntas] = useState([])
 
     const axiosConfig = getAxios(true)
@@ -19,17 +20,15 @@ function Questions() {
             {
                 perguntas.map((pergunta) => {
                     return (
-
-                        <p key={pergunta.id}>
-                            <input id={pergunta.id} type='checkbox' name='checkPergunta' />
-                            <label>{pergunta.title}
-                            </label>
-                        </p>)
-
-                })
-            }
-        </div>
+                        < FormGroup key={pergunta.id}>
+                            <Input id={pergunta.id} type='checkbox' name='perguntas' onChange={handleChange} />
+                            <Label for="name">{pergunta.title}</Label>
+                        </FormGroup>
+                    )
+                })}
+        </div >
     )
+
 }
 
 export default Questions

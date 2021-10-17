@@ -1,17 +1,18 @@
 import React from "react";
+import Button from "reactstrap/lib/Button";
+import * as AiIcons from 'react-icons/ai';
 
 
 function ButtonCopy() {
-  var copyText = document.getElementById("myInput");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
-  alert("Copied the text: " + copyText.value);
+  // var copyText = document.getElementById("myInput");
+  // copyText.select();
+  // copyText.setSelectionRange(0, 99999);
+  // navigator.clipboard.writeText(copyText.value);
+  // alert("Copied the text: " + copyText.value);
 
   return (
-    <div>
-        <button type='button' onClick={ButtonCopy} className="bg-gradient-theme-left border-0">Copiar</button>
-    </div>
-)
+    <AiIcons.AiOutlineCopy size={45} style={{'color': '#fc5c7d'}}/>
+  )
 }
 export default ButtonCopy
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import { Row, Col, Card, Container } from 'reactstrap';
+import { Row, Col, Card, Container, Alert } from 'reactstrap';
 import ButtonGoBack from '../components/ButtonGoBack';
 import Questions from '../components/Questions';
 import Room from '../components/Room';
@@ -17,6 +17,7 @@ function CreateRoom() {
     // states
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
+    const [messageAlert, setMessageAlert] = useState('');
 
     // axios
     const axiosConfig = getAxios(true)
@@ -28,6 +29,10 @@ function CreateRoom() {
         minimoParticipantes: '',
         comSenha: '',
         senha: ''
+    }
+
+    function apiErrorHandle(reason) {
+        setMessageAlert('Erro na API')
     }
 
     function submitForm(values) {
@@ -45,7 +50,7 @@ function CreateRoom() {
 
         axiosConfig.post('/room', to_post).then(
             response => { setLoading(false); console.log('certo') }
-        ).catch(console.log('erro na api'))
+        ).catch((reason) => apiErrorHandle(reason))
     }
 
     const { handleChange, handleSubmit, values } = useForm(
@@ -68,13 +73,18 @@ function CreateRoom() {
                     justifyContent: 'center',
                 }}>
                     <Row>
+                        {messageAlert &&
+                            <Alert color="danger">
+                                {messageAlert}
+                            </Alert>}
+                    </Row>
+                    <Row>
                         <Col xs="6" sm="4">
 
                             <Card body style={{
                                 borderRadius: '10px'
                             }}>
-                                <Questions />
-
+                                <Questions handleChange={handleChange} values={values} />
                             </Card>
 
                         </Col>
@@ -102,12 +112,15 @@ function CreateRoom() {
                         </Col>
 
                     </Row>
+                    <div style={{
+                        textAlign: 'center',
+                    }}>
+                        <ButtonGoBack />
+                    </div>
+
+
                 </Container>
-                <div style={{
-                    textAlign: 'center',
-                }}>
-                    <ButtonGoBack />
-                </div>
+
 
             </div>
 
