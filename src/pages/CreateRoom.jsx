@@ -8,11 +8,13 @@ import Lobby from '../components/Lobby';
 import useForm from '../services/useForm';
 import getAxios from '../services/axiosConfig';
 import validateRoom from '../services/validateRoom';
+// import { useParams } from "react-router-dom";
 
 
 
 
 function CreateRoom() {
+
     // states
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -54,7 +56,7 @@ function CreateRoom() {
     }
 
     function fecthLinkQuestion(response) {
-        const linkSala = encodeURI('https://localhost:3000/' + response.data.id + '/' + values.nomeSala)
+        const linkSala = encodeURI('https://localhost:3000/sala/' + response.data.id + '/' + values.nomeSala)
         setLinkSala(linkSala)
     }
 
@@ -120,7 +122,7 @@ function CreateRoom() {
                         <Card body style={{
                             borderRadius: '10px'
                         }}>
-                            <Lobby participants={participants} owner={owner} />
+                            <Lobby participants={participants} owner={owner} values={values} />
 
                         </Card>
 

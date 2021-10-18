@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 import ModalRules from './ModalRules';
 
 
-function Lobby({ participants, owner }) {
+function Lobby({ participants, owner, values }) {
 
 
     return (
@@ -12,17 +12,23 @@ function Lobby({ participants, owner }) {
             <div className="text-center pb-4">
                 <h1>Lobby</h1>
             </div>
+            <Row className="d-flex justify-content-around">
+                <span className="font-weight-bold">
+                    Número de Jogadores:
+                </span>
+            </Row>
             <hr />
             <Col>
+
                 <Row className="d-flex justify-content-around">
                     <span>
-                        Min
+                        Min: {values.minimoParticipantes}
                     </span>
                     <span>
-                        Atual
+                        Atual: {participants.length > 0 ? participants.length : ''}
                     </span>
                     <span>
-                        Max
+                        Max: {values.maximoParticipantes}
                     </span>
                 </Row>
             </Col>
