@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, FormGroup, Input, Label, FormText, Button } from 'reactstrap';
 import ButtonCopy from './ButtonCopy';
 import ButtonShare from './ButtonShare';
 
-function Room({ errors, values, handleChange, handleSubmit, loading }) {
+
+function Room({ errors, values, handleChange, handleSubmit, loading, linkSala }) {
+    //states
+    const [linkCopiado, setLinkCopiado] = useState(false);
 
     const dateNameRoom = {
         type: 'text',
@@ -91,14 +94,14 @@ function Room({ errors, values, handleChange, handleSubmit, loading }) {
             </Button>
             <hr />
             <div className="d-flex justify-content-around">
-                <ButtonCopy />
+                <ButtonCopy linkSala={linkSala} setLinkCopiado={setLinkCopiado} />
                 <ButtonShare />
             </div>
             <hr />
             <div style={{
                 'textAlign': 'center'
             }}>
-                <span>link criado</span>
+                {linkCopiado && <span>Link Copiado!</span>}
 
             </div>
             <div style={{

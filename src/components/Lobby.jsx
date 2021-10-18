@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { Row, Col, Button, Tooltip } from 'reactstrap';
+import React from 'react'
+import { Row, Col, Button } from 'reactstrap';
 import * as AiIcons from 'react-icons/ai';
 import ModalRules from './ModalRules';
 
 
 function Lobby() {
-    const [tooltipOpen, setTooltipOpen] = useState(false);
-    const toggle = () => setTooltipOpen(!tooltipOpen);
 
 
     return (

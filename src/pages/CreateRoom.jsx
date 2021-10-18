@@ -13,11 +13,11 @@ import validateRoom from '../services/validateRoom';
 
 
 function CreateRoom() {
-
     // states
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [messageAlert, setMessageAlert] = useState('');
+    const [linkSala, setLinkSala] = useState('')
 
     // axios
     const axiosConfig = getAxios(true)
@@ -46,12 +46,16 @@ function CreateRoom() {
             to_post["password"] = values.senha
         }
 
-
-
         axiosConfig.post('/room', to_post).then(
-            response => { setLoading(false); console.log('certo') }
+            response => { setLoading(false); fecthLinkQuestion(response) }
         ).catch((reason) => apiErrorHandle(reason))
     }
+
+    function fecthLinkQuestion(response) {
+        const linkSala = encodeURI('https://localhost:3000/' + response.data.id + '/' + values.nomeSala)
+        setLinkSala(linkSala)
+    }
+
 
     const { handleChange, handleSubmit, values } = useForm(
         submitForm,
@@ -65,64 +69,60 @@ function CreateRoom() {
     return (
         <div>
             <Sidebar />
-            <div >
-                <Container style={{
-                    width: '80%',
-                    display: 'flex 1',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+            <Container style={{
+                width: '80%',
+                display: 'flex 1',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }} className="pt-4 pb-4">
+                <Row>
+                    {messageAlert &&
+                        <Alert color="danger">
+                            {messageAlert}
+                        </Alert>}
+                </Row>
+                <Row className="pb-3">
+                    <Col xs="6" sm="4">
+
+                        <Card body style={{
+                            borderRadius: '10px'
+                        }}>
+                            <Questions handleChange={handleChange} values={values} />
+                        </Card>
+
+                    </Col>
+
+                    <Col xs="6" sm="4">
+
+                        <Card body style={{
+                            borderRadius: '10px'
+                        }}>
+                            <Room errors={errors} values={values} handleChange={handleChange} handleSubmit={handleSubmit} loading={loading} linkSala={linkSala} />
+
+                        </Card>
+
+                    </Col>
+
+                    <Col xs="6" sm="4">
+
+                        <Card body style={{
+                            borderRadius: '10px'
+                        }}>
+                            <Lobby />
+
+                        </Card>
+
+                    </Col>
+
+                </Row>
+                <div style={{
+                    textAlign: 'center',
                 }}>
-                    <Row>
-                        {messageAlert &&
-                            <Alert color="danger">
-                                {messageAlert}
-                            </Alert>}
-                    </Row>
-                    <Row>
-                        <Col xs="6" sm="4">
-
-                            <Card body style={{
-                                borderRadius: '10px'
-                            }}>
-                                <Questions handleChange={handleChange} values={values} />
-                            </Card>
-
-                        </Col>
-
-                        <Col xs="6" sm="4">
-
-                            <Card body style={{
-                                borderRadius: '10px'
-                            }}>
-                                <Room errors={errors} values={values} handleChange={handleChange} handleSubmit={handleSubmit} loading={loading} />
-
-                            </Card>
-
-                        </Col>
-
-                        <Col xs="6" sm="4">
-
-                            <Card body style={{
-                                borderRadius: '10px'
-                            }}>
-                                <Lobby />
-
-                            </Card>
-
-                        </Col>
-
-                    </Row>
-                    <div style={{
-                        textAlign: 'center',
-                    }}>
-                        <ButtonGoBack />
-                    </div>
+                    <ButtonGoBack />
+                </div>
 
 
-                </Container>
-
-
-            </div>
+            </Container>
 
         </div >
     )

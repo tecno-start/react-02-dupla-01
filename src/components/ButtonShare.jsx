@@ -5,7 +5,7 @@ import * as AiIcons from 'react-icons/ai';
 function ButtonShare() {
 
 return (
-  <AiIcons.AiOutlineShareAlt size={45} style={{'color': '#6a82fb'}}/>
+  <AiIcons.AiOutlineShareAlt size={45} style={{'color': '#6a82fb'}} cursor='pointer'/>
 )
 
 

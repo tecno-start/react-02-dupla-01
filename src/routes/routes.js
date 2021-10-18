@@ -1,7 +1,5 @@
 import PrivateRoute from './PrivateRoute'
 
-
-
 const LOGIN = "/login"
 const HOME = "/"
 const CADASTRO = "/cadastro"

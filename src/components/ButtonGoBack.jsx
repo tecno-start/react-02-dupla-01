@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
+import Button from 'reactstrap/lib/Button';
 
 function ButtonGoBack() {
 
@@ -8,9 +9,13 @@ function ButtonGoBack() {
 
 
     return (
-        <div>
-            <button type='button' onClick={voltar} className="bg-gradient-theme-left border-0">Voltar</button>
-        </div>
+        <Button
+            size="lg"
+            className="bg-gradient-theme-left border-0"
+            block
+            onClick={voltar}>
+            Voltar
+        </Button>
     )
 
 }

@@ -11,7 +11,7 @@ function ModalRules() {
     const toggle = () => setModal(!modal);
     return (
         <div>
-            <BiIcons.BiHelpCircle size={30} style={{ 'color': '#ba55d3' }} onClick={toggle} id='tooltipModal' />
+            <BiIcons.BiHelpCircle size={30} style={{ 'color': '#ba55d3' }} onClick={toggle} id='tooltipModal' cursor='pointer' />
             <UncontrolledTooltip placement="top" target="tooltipModal" >
                 Regras do Jogo
             </UncontrolledTooltip >
