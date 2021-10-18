@@ -77,10 +77,12 @@ function Room({ errors, values, handleChange, handleSubmit, loading, linkSala })
                         <option>Não</option>
                     </Input>
                 </FormGroup>
-                <FormGroup>
+                {values.comSenha === 'Sim' && 
+                <FormGroup >
                     <Label for="roomPassword">Senha</Label>
                     <Input {...dateRoomPassword} />
                 </FormGroup>
+                }
                 {errors['senha'] && <FormText color="danger">
                     {errors['senha']}
                 </FormText>}
