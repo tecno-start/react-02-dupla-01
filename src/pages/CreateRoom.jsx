@@ -18,6 +18,8 @@ function CreateRoom() {
     const [loading, setLoading] = useState(false);
     const [messageAlert, setMessageAlert] = useState('');
     const [linkSala, setLinkSala] = useState('')
+    const [participants, setParticipants] = useState([])
+    const [owner, setOwner] = useState({})
 
     // axios
     const axiosConfig = getAxios(true)
@@ -47,13 +49,23 @@ function CreateRoom() {
         }
 
         axiosConfig.post('/room', to_post).then(
-            response => { setLoading(false); fecthLinkQuestion(response) }
+            response => { setLoading(false); fecthLinkQuestion(response); fetchParticipants(response); setOwner(response.data.owner) }
         ).catch((reason) => apiErrorHandle(reason))
     }
 
     function fecthLinkQuestion(response) {
         const linkSala = encodeURI('https://localhost:3000/' + response.data.id + '/' + values.nomeSala)
         setLinkSala(linkSala)
+    }
+
+    function fetchParticipants(response) {
+        let participants = []
+
+        response.data.participants.forEach(participant => {
+            participants.push(participant)
+        });
+
+        setParticipants(participants)
     }
 
 
@@ -108,7 +120,7 @@ function CreateRoom() {
                         <Card body style={{
                             borderRadius: '10px'
                         }}>
-                            <Lobby />
+                            <Lobby participants={participants} owner={owner} />
 
                         </Card>
 

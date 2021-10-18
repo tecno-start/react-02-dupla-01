@@ -16,11 +16,13 @@ function Questions({ handleChange, values }) {
 
     return (
         <div>
+            <div className="text-center pb-4">
             <h1>Perguntas</h1>
+            </div>
             {
                 perguntas.map((pergunta) => {
                     return (
-                        < FormGroup key={pergunta.id}>
+                        < FormGroup key={pergunta.id} className='ml-3'>
                             <Input id={pergunta.id} type='checkbox' name='perguntas' onChange={handleChange} />
                             <Label for="name">{pergunta.title}</Label>
                         </FormGroup>

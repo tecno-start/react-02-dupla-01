@@ -4,12 +4,14 @@ import * as AiIcons from 'react-icons/ai';
 import ModalRules from './ModalRules';
 
 
-function Lobby() {
+function Lobby({ participants, owner }) {
 
 
     return (
         <div>
-            <h1>Lobby</h1>
+            <div className="text-center pb-4">
+                <h1>Lobby</h1>
+            </div>
             <hr />
             <Col>
                 <Row className="d-flex justify-content-around">
@@ -26,16 +28,11 @@ function Lobby() {
             </Col>
             <hr />
             <Col>
-                <Row>
-                    <AiIcons.AiFillStar />
-                    <p>texto1</p>
-                </Row>
-                <Row>
-                    <p>texto2</p>
-                </Row>
-                <Row>
-                    <p>texto3</p>
-                </Row>
+                {participants.map((participant) =>
+                    <Row key={participant.id}>
+                        {participant.id === owner.id && <AiIcons.AiFillStar />}
+                        <p>{participant.name}</p>
+                    </Row>)}
             </Col>
             <div className="d-flex justify-content-center">
                 <Row>
