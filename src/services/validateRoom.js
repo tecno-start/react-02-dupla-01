@@ -13,6 +13,9 @@ export default function validateRoom(values) {
         'condition': parseInt(values.maximoParticipantes) < parseInt(values.minimoParticipantes), 'error': 'Máximo deve ser maior/igual ao mínimo.', 'field': 'maximoParticipantes'
     },
     {
+        'condition': parseInt(values.maximoParticipantes) > 20, 'error': 'Máximo deve ser menor que 20.', 'field': 'maximoParticipantes'
+    },
+    {
         'condition': parseInt(values.minimoParticipantes) < 3, 'error': 'Número de participantes deve ser maior igual a 3.', 'field': 'minimoParticipantes'
     },
     {

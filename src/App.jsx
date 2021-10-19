@@ -22,7 +22,8 @@ import {
   CRIAR_SALA, 
   POLITICA_PRIVACIDADE, 
   MEUS_PONTOS, 
-  REDEFINIR_SENHA
+  REDEFINIR_SENHA,
+  SALA_JOGO
 } from './routes/routes.js'
 
 
@@ -50,6 +51,7 @@ function App() {
         <PrivateRoute Component={SearchRoom} path={BUSCAR_SALA} exact />
         <PrivateRoute Component={CreateRoom} path={CRIAR_SALA} exact />
         <PrivateRoute Component={MyPoints} path={MEUS_PONTOS} exact />
+        <PrivateRoute Component={HomePage} path={SALA_JOGO} exact />
       </Switch>
     </Router>
   );

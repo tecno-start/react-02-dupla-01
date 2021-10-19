@@ -9,6 +9,7 @@ const MEUS_PONTOS = '/meus-pontos'
 const BUSCAR_SALA = '/buscar-sala'
 const CRIAR_SALA = '/criar-sala'
 const NOT_FOUND = "/not-found"
+const SALA_JOGO ='/jogo/{id}/{nome}'
 
 
 export {
@@ -21,5 +22,6 @@ export {
     MEUS_PONTOS,
     BUSCAR_SALA,
     CRIAR_SALA,
-    NOT_FOUND
+    NOT_FOUND,
+    SALA_JOGO
 }

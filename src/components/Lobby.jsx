@@ -1,10 +1,19 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
 import { Row, Col, Button } from 'reactstrap';
 import * as AiIcons from 'react-icons/ai';
 import ModalRules from './ModalRules';
+import {SALA_JOGO} from '../routes/routes'
+
 
 
 function Lobby({ participants, owner, values }) {
+    const history = useHistory()
+
+    function handleOnClick(){
+        history.push(SALA_JOGO)
+        
+    }
 
 
     return (
@@ -42,7 +51,7 @@ function Lobby({ participants, owner, values }) {
             </Col>
             <div className="d-flex justify-content-center">
                 <Row>
-                    <Button
+                    <Button onClick={handleOnClick}
                         size="lg"
                         className="bg-gradient-theme-left border-0">
                         Jogar
@@ -57,3 +66,5 @@ function Lobby({ participants, owner, values }) {
 }
 
 export default Lobby
+
+// className={participants.length =< values.minimoParticipantes ? 'text-danger' : 'text-success' }
