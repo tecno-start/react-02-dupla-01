@@ -79,7 +79,7 @@ function AuthForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <div className="text-center pb-4">
-        <h1>TecnoStart</h1>
+        <h1>Best Friend</h1>
       </div>
 
       <FormGroup>
